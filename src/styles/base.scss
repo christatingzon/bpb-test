@@ -1,0 +1,37 @@
+@import "setup/typography.scss";
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-size: 16px;
+	color: $black;
+	line-height: 1.5;
+	font-family: $reg-font;
+}
+
+.container {
+	max-width: $container-width;
+	margin: 0 auto;
+	padding: 0 10px;
+}
+
+.hidden-s {
+	@include mq((max-width: $medium)) {
+		display: none;
+	}
+}
+
+.nostyle-list {
+	list-style: none;
+	padding-left: 0;
+}
+
+button {
+	cursor: pointer;
+}
+
+
+@import "components/header.scss";
+@import "components/footer.scss";

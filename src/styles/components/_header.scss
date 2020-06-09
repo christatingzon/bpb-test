@@ -1,0 +1,265 @@
+/* Site Header */
+.site-header {
+	.top-banner {
+		@include background('~@/assets/images/top-banner-image.png', contain, $darkergray);
+		padding: 15px 10px;
+		p {
+			margin: 0;
+			text-align: center;
+			color: $white;
+
+			&:first-child {
+				font-family: $xbold-font;
+				font-size: 27px;
+				letter-spacing: 1.5px;
+			}
+
+			&:last-child {
+				letter-spacing: 0.21px;
+			}
+		}
+	}
+
+	.welcome-block {
+		font-size: 12px;
+		border-bottom: 1px solid $lightgray;
+		.container {
+			display: flex;
+			justify-content: space-between;
+		}
+		.left {
+			padding: 10px 0;
+			color: $darkgray;
+			span {
+				font-family: $medium-font;
+				color: $darkergray;
+			}
+		}
+
+		.right {
+			ul {
+				display: flex;
+				margin: 0;
+				height: 100%;
+
+				li {
+					padding: 10px 15px;
+
+					@include mq(medium) {
+						border-left: 1px solid $lightgray;
+					}
+					
+					@include mq((max-width: $medium)) {
+						&:not(:last-child) {
+							display: none;
+						}
+					}
+				}
+			}
+
+			a {
+				color: $darkgray;
+				text-decoration: none;
+
+				&.logout {
+					img {
+						position: relative;
+				    top: 3px;
+				    left: 2px;
+					}
+				}
+			}
+
+			.exc {
+				input {
+					display: none;
+					&:checked {
+						+ span {
+							background-color: $darkergray;
+							padding: 4px 20px 4px 8px;
+							&:before {
+								left: calc(100% - 14px - 2px);
+							}
+						}
+					}
+				}
+				span {
+					font-size: 8px;
+					background-color: $darkgray;
+					color: $white;
+					padding: 4px 8px 4px 20px;
+					border-radius: 10px;
+					position: relative;
+					font-family: $medium-font;
+					@include soft-transition;
+					cursor: pointer;
+
+					&:before {
+						@include soft-transition;
+						content: "";
+						width: 14px;
+						height: 14px;
+						display: block;
+						background-color: $white;
+						position: absolute;
+						top: 2px;
+						left: 2px;
+						z-index: 1;
+						border-radius: 50%;
+					}
+				}
+			}
+		}
+	}
+
+	.mid-block {
+		@include mq(medium) {
+			padding: 16px 0;
+		}
+
+		.container {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			flex-wrap: wrap;
+
+			@include mq((max-width: $medium - 1)) {
+				padding: 0;
+			}
+		}
+
+		.logo {
+			@include mq((max-width: $medium - 1)) {
+				padding: 10px;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				flex: 1;
+			}
+
+			.hamburger-menu {
+				height: 16px;
+				position: relative;
+				display: block;
+				width: 26px;
+				span {
+					position: absolute;
+					width: 100%;
+					height: 2px;
+					display: block;
+					background-color: $black;
+				}
+			}
+
+			button {
+				padding: 0;
+				background-color: transparent;
+				border: 0;
+				outline: 0;
+			}
+
+			@include mq(medium) {
+				.hamburger-menu, .cart-mobile {
+					display: none;
+				}
+			}
+		}
+
+		.search-bar {
+			width: 100%;
+			padding: 12px 10px;
+    	background: $black;
+
+			input[type=text] {
+				width: 100%;
+				font-size: 15px;
+		    padding: 10px 55px 10px 20px;
+		    border-radius: 20px;
+		    border: 1px solid $lightgray;
+		    color: $black;
+		    outline: none;
+		    @include background('~@/assets/images/search-icon.svg', 17px 17px, $lightergray, 97%);
+
+		    &::placeholder {
+		    	color: rgba($black, .5);
+		    }
+
+		    &:focus {
+		    	border-color: $blue;
+		    }
+			}
+
+			@include mq(medium) {
+				width: 40%;
+				padding: 0;
+	    	background: transparent;
+			}
+		}
+
+		.cart-block {
+			button {
+				font-size: 12px;
+		    display: flex;
+		    align-items: center;
+		    border: 1px solid $lightgray;
+		    background-color: transparent;
+		    border-radius: 50px;
+		    padding: 11px 20px;
+		    outline: 0;
+		    img {
+		    	margin-right: 8px;
+		    }
+
+		    &:hover {
+		    	border-color: $blue;
+		    }
+			}
+		}
+	}
+
+	.nav-block {
+		background-color: $lightergray;
+		padding: 12px 0;
+		.container {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			.nav-list {
+				margin: 0;
+
+				li {
+					display: inline-block;
+
+					& + li {
+						margin-left: 30px;
+					}
+
+					button, a {
+						font-size: 15px;
+						color: $black;
+						border: 0 none;
+						outline: none;
+						background-color: transparent;
+					}
+
+					img {
+						bottom: 2px;
+						position: relative;
+					}
+				}
+			}
+
+			.download-cat {
+				font-size: 12px;
+				color: $black;
+				font-family: $medium-font;
+			}
+
+			a {
+				text-decoration: none;
+			}
+		}
+	}
+}
+

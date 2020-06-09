@@ -1,0 +1,45 @@
+//Colors
+$blue: #00AEF0;
+$charcoal: #2F2F30;
+$light: #F9F9F9;
+$lightergray: #F4F5F6;
+$lightgray: #E7E9EB;
+$darkgray: #6B6F74;
+$darkergray: #3F4B59;
+$white: #fff;
+$black: #272727;
+
+//Fonts
+$reg-font: 'aktiv_grotesk_corpregular', Helvetica, Arial, sans-serif;
+$light-font: 'aktiv_grotesk_corplight', Helvetica, Arial, sans-serif;
+$medium-font: 'aktiv_grotesk_corpmedium', Helvetica, Arial, sans-serif;
+$bold-font: 'aktiv_grotesk_corpbold', Helvetica, Arial, sans-serif;
+$xbold-font: 'proxima_novaextrabold', Helvetica, Arial, sans-serif;
+
+
+//Media Query
+$breakpoints: (
+	tiny: 			"(min-width: 350px)",
+	small: 			"(min-width: 450px)",
+	smallish: 	"(min-width: 600px)",
+	medium: 		"(min-width: 768px)",
+	mediumish: 	"(min-width: 1190px)",
+	large: 			"(min-width: 1160px)",
+	largeish: 	"(min-width: 1280px)",
+	huge: 			"(min-width: 1440px)",
+	bigmac: 		"(min-width: 1920px)",
+);
+
+$tiny: 			 	350px;
+$small: 			450px;
+$smallish: 	 	600px;
+$medium: 		 	768px;
+$mediumish: 	1190px;
+$large: 			1160px;
+$largeish: 	 	1280px;
+$huge: 			 	1440px;
+$bigmac: 		 	1920px;
+
+
+//General
+$container-width: 1260px;

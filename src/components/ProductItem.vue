@@ -8,7 +8,7 @@
 			<p class="item-piece">{{ product.extraDetails }} Per Box</p>
 		</div>
 		<div v-else>
-			<p class="item-price"><span>{{ product.price }}</span> Per Pack</p>
+			<p class="item-price"><span>{{ product.price | currency }}</span> Per Pack</p>
 			<p class="item-piece">{{ product.extraDetails }} Per Pack</p>
 		</div>
 

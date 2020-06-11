@@ -8,7 +8,7 @@
 			</li>
 			<li>
 				<span>Plus GST</span>
-				<span>{{ subTotal | currency }}</span>
+				<span>{{ taxTotal | currency }}</span>
 			</li>
 			<li>
 				<span>Total (incl GST)</span>

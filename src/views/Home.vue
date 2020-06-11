@@ -1,14 +1,40 @@
 <template>
   <div class="home">
-  	<h1>Home page</h1>
+  	<div class="trending-products">
+			<div class="container">
+  			<h2>Top Trending Products</h2>
+  			<div class="product-items">
+  				<div class="container">
+  					<ul class="nostyle-list">
+  						<li v-for="(item, index) in products" :key="item.id">
+								<ProductItem :itemIndex="index" />
+  						</li>
+  					</ul>
+  				</div>
+  			</div>
+			</div>
+  	</div>
   </div>
 </template>
 
 <script>
+import ProductItem from "@/components/ProductItem";
+
 export default {
   name: "Home",
   components: {
-  }
+  	ProductItem
+  },
+
+  computed: {
+  	products () {
+  		return this.$store.state.products //name of state
+  	}
+  },
+
+  created() {
+  	this.$store.dispatch("fetchProducts");
+  },
 };
 </script>
 

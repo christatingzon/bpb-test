@@ -4,13 +4,11 @@
 			<div class="container">
   			<h2>Top Trending Products</h2>
   			<div class="product-items">
-  				<div class="container">
-  					<ul class="nostyle-list">
-  						<li v-for="(item, index) in products" :key="item.id">
-								<ProductItem :itemIndex="index" />
-  						</li>
-  					</ul>
-  				</div>
+					<ul class="nostyle-list">
+						<li v-for="(item, index) in products" :key="item.id">
+							<ProductItem :itemIndex="index" />
+						</li>
+					</ul>
   			</div>
 			</div>
   	</div>

@@ -1,0 +1,48 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-size: 16px;
+	color: $black;
+	line-height: 1.5;
+	font-family: $reg-font;
+}
+
+button {
+	cursor: pointer;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+/* heading */
+h2 {
+	font-weight: normal;
+	font-size: 20px;
+	line-height: 1.28;
+
+	@include mq(medium){
+		font-size: 22px;
+	}
+}
+
+/* general classes */
+.container {
+	max-width: $container-width;
+	margin: 0 auto;
+	padding: 0 10px;
+}
+
+.nostyle-list {
+	list-style: none;
+	padding-left: 0;
+}
+
+.hidden-s {
+	@include mq((max-width: $medium)) {
+		display: none;
+	}
+}

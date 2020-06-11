@@ -1,0 +1,122 @@
+/* Home page */
+.home {
+	background-color: $light;
+	.trending-products {
+		padding-top: 20px;
+		padding-bottom: 20px;
+		h2 {
+			text-align: center;
+			margin-top: 0;
+			margin-bottom: 20px;
+
+			@include mq(medium) {
+				margin-bottom: 40px;
+			}
+		}
+	}
+
+	.product-items {
+		ul {
+			display: flex;
+			flex-wrap: wrap;
+
+			.product-item {
+				padding: 10px;
+				border: 1px solid $lightgray;
+				background-color: $white;
+				box-shadow: 0 1px 0 0 rgba(231,233,235,0.9);
+				height: 100%;
+
+				.item-id {
+					margin: 0;
+					color: $darkgray;
+					font-size: 12px;
+				}
+
+				.item-name {
+					font-size: 13px;
+					color: $darkergray;
+					margin: 2px 0 10px;
+					min-height: 60px;
+				}
+
+				.item-price {
+					font-size: 12px;
+					margin: 0;
+
+					span {
+						font-size: 15px;
+						font-family: $bold-font;
+						margin-right: 2px;
+					}
+				}
+
+				.item-piece {
+					font-size: 12px;
+					color: $darkgray;
+					margin: 0;
+				}
+
+				.quantity {
+					margin-top: 10px;
+					border: 1px solid $lightgray;
+					border-radius: 3px;
+					padding: 5px;
+					display: flex;
+					justify-content: space-between;
+					font-size: 15px;
+					button {
+						width: 23px;
+						height: 23px;
+						font-size: 18px;
+						@include default-button;
+
+						&[disabled] {
+							background-color: $lightgray;
+						}
+					}
+				}
+
+				.action {
+					display: flex;
+					justify-content: space-between;
+					margin-top: 6px;
+
+					> * {
+						width: calc(50% - 3px);
+					}
+
+					span {
+						font-size: 12px;
+				    color: $darkergray;
+				    border: 1px solid $lightgray;
+				    border-radius: 3px;
+				    padding: 8px 10px;
+				    text-align: center;
+					}
+
+					button {
+						font-size: 12px;
+						@include default-button;
+						font-family: $bold-font;
+					}
+				}
+			}
+
+			@include mq(medium) {
+				li {
+					flex: 1 0 20%;
+					padding-left: 10px;
+					padding-right: 10px;
+					margin-bottom: 20px;
+					margin-top: 20px;
+					width: 20%;
+				}
+
+				.product-item {
+					padding: 20px;
+				}
+			}
+		}
+	}
+}

@@ -29,3 +29,16 @@
 @mixin soft-transition() {
   transition: 0.4s ease all;
 }
+
+// Button
+@mixin base-button() {
+  border: 0 none;
+  border-radius: 3px;
+  outline: 0;
+}
+
+@mixin default-button() {
+  @include base-button;
+  background-color: $blue;
+  color: $white;
+}

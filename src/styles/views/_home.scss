@@ -28,6 +28,10 @@
 				height: 100%;
 				border-radius: 3px;
 
+				> img {
+					width: 100%;
+				}
+
 				.item-id {
 					margin: 0;
 					color: $darkgray;
@@ -82,9 +86,10 @@
 					display: flex;
 					justify-content: space-between;
 					margin-top: 6px;
+					flex-wrap: wrap;
 
 					> * {
-						width: calc(50% - 3px);
+						width: 100%;
 					}
 
 					span {
@@ -97,25 +102,63 @@
 					}
 
 					button {
+						margin-top: 6px;
 						font-size: 12px;
 						@include default-button;
 						font-family: $bold-font;
+						padding: 8px 10px;
 					}
+				}
+			}
+
+			li {
+				flex: 1 0 100%;
+				margin-top: 10px;
+				padding-left: 5px;
+				padding-right: 5px;
+				margin-bottom: 10px;
+			}
+
+			@include mq(small){
+				li {
+					flex: 1 0 50%;
 				}
 			}
 
 			@include mq(medium) {
 				li {
-					flex: 1 0 20%;
+					flex: 1 0 33.33%;
+					margin-top: 20px;
 					padding-left: 10px;
 					padding-right: 10px;
 					margin-bottom: 20px;
-					margin-top: 20px;
-					width: 20%;
 				}
 
 				.product-item {
 					padding: 20px;
+
+					.action {
+						> * {
+							width: calc(50% - 3px);
+						}
+						button {
+							margin-top: 0;
+						}
+					}
+
+				}
+			}
+
+			@include mq((min-width: 968px)) {
+				li {
+					flex: 1 0 25%;
+				}
+			}
+
+
+			@include mq(mediumish) {
+				li {
+					flex: 1 0 20%;
 				}
 			}
 		}

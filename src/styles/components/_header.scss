@@ -148,6 +148,13 @@
 					height: 2px;
 					display: block;
 					background-color: $black;
+
+					&:first-child {
+						top: 0;
+					}
+					&:last-child {
+						top: 100%;
+					}
 				}
 			}
 
@@ -159,7 +166,7 @@
 			}
 
 			@include mq(medium) {
-				.hamburger-menu, .cart-mobile {
+				.hamburger-menu, .cart-block {
 					display: none;
 				}
 			}
@@ -197,21 +204,81 @@
 		}
 
 		.cart-block {
-			button {
+			position: relative;
+			> button {
 				font-size: 12px;
 		    display: flex;
 		    align-items: center;
-		    border: 1px solid $lightgray;
 		    background-color: transparent;
 		    border-radius: 50px;
-		    padding: 11px 20px;
 		    outline: 0;
+
+		    @include mq(medium){
+		    	border: 1px solid $lightgray;
+		    	padding: 11px 20px;
+		    }
+
+		    span {
+					margin: 0 2px;
+		    }
+
 		    img {
 		    	margin-right: 8px;
 		    }
 
 		    &:hover {
 		    	border-color: $blue;
+		    }
+
+		    &.active {
+		    	border-color: $blue;
+		    	+ .cart-summary {
+		    		display: block;
+		    	}
+		    }
+			}
+
+			.cart-summary {
+				position: absolute;
+				width: 355px;
+		    right: 0;
+		    background: $white;
+		    box-shadow: 0 2px 10px 0 rgba(107,111,116,0.3);
+		    border-radius: 3px;
+		    padding: 16px;
+		    margin-top: 10px;
+		    display: none;
+
+		    > p {
+		    	text-align: right;
+		    	margin: 0;
+		    	font-size: 12px;
+		    	font-family: $medium-font;
+		    }
+
+		    > ul {
+		    	border: 1px solid $lightgray;
+		    	border-radius: 3px;
+		    	padding: 10px 16px;
+		    	margin: 10px 0;
+		    	li {
+		    		display: flex;
+		    		justify-content: space-between;
+		    		font-size: 13px;
+		    		margin-bottom: 4px;
+
+		    		&:last-child {
+		    			font-family: $bold-font;
+		    			margin-bottom: 0;
+		    		}
+		    	}
+		    }
+
+		    button {
+		    	@include default-button;
+		    	font-family: $bold-font;
+		    	width: 100%;
+		    	padding: 10px;
 		    }
 			}
 		}

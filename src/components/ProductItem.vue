@@ -22,8 +22,6 @@
 			<span>{{ product.price * quantity | currency }}</span>
 			<button @click="addProductToCart({ product, quantity })">Add to Cart</button>
 		</div>
-
-
 	</div>
 </template>
 

@@ -44,13 +44,17 @@
 						<span></span>
 					</button>
 					<router-link to="/"><img src="@/assets/images/matt-pack-logo.png"/></router-link>
-					<button class="cart-mobile"><img src="@/assets/images/cart-icon.svg"/></button>
+					<div class="cart-block">
+						<button :class="{active: cartSummaryActive}" @click="cartSummaryActive = !cartSummaryActive"><img src="@/assets/images/cart-icon.svg"/></button>
+						<CartSynopsis />
+					</div>
 				</div>
 				<div class="search-bar">
 					<input type="text" placeholder="Search Product Name or Code…">
 				</div>
 				<div class="cart-block hidden-s">
-					<button><img src="@/assets/images/cart-icon.svg"/> 4 items - $34.95</button>
+					<button :class="{active: cartSummaryActive}" @click="cartSummaryActive = !cartSummaryActive"><img src="@/assets/images/cart-icon.svg"/>{{ total.items }} <span v-if="total.items > 1">items</span><span v-else>item</span> - {{ total.price | currency }}</button>
+					<CartSynopsis />
 				</div>
 			</div>
 		</div>
@@ -70,20 +74,21 @@
 				<a href="#" class="download-cat">Download Catalogues Here</a>
 			</div>
 		</nav>
-		<div class="cart">
-			total: {{ total.price | currency }}
-			items: {{ total.items }}
-			subtotal: {{ subTotal | currency }}
-			tax: {{ taxTotal | currency }}
-		</div>
 	</header>
 </template>
 
 <script>
+	import CartSynopsis from "@/components/CartSynopsis";
+
 	export default {
 		data() {
 		  return {
+		  	cartSummaryActive: false
 		  }     
+		},
+
+		components: {
+			CartSynopsis
 		},
 
 		computed: {

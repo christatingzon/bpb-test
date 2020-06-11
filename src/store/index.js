@@ -29,8 +29,8 @@ export default new Vuex.Store({
       let totalPrice = 0
       let totalItems = 0
 
-      totalItems = getters.cartProducts.length
       getters.cartProducts.forEach(product => {
+        totalItems += product.quantity
         totalPrice += product.price * product.quantity
       })
 
@@ -69,7 +69,6 @@ export default new Vuex.Store({
     },
 
     addProductToCart({ state, commit }, product) {
-      console.log(product);
       const itemId = product.product.id
       const qty = product.quantity
       const existingItem = state.cart.find(item => item.id === itemId)

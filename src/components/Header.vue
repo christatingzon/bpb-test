@@ -70,5 +70,34 @@
 				<a href="#" class="download-cat">Download Catalogues Here</a>
 			</div>
 		</nav>
+		<div class="cart">
+			total: {{ total.price | currency }}
+			items: {{ total.items }}
+			subtotal: {{ subTotal | currency }}
+			tax: {{ taxTotal | currency }}
+		</div>
 	</header>
 </template>
+
+<script>
+	export default {
+		data() {
+		  return {
+		  }     
+		},
+
+		computed: {
+			total() {
+				return this.$store.getters.cartTotal
+			},
+
+			subTotal() {
+				return +(Math.round((this.$store.getters.cartTotal.price - (this.$store.getters.cartTotal.price * .15)) + "e+2")  + "e-2")
+			},
+
+			taxTotal() {
+				return +(Math.round((this.$store.getters.cartTotal.price * .15) + "e+2")  + "e-2")
+			}
+		},
+	}
+</script>
